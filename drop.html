@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Strona internetowa dla gracza Metin2</title>
+    <link rel="stylesheet" type="text/css" href="drop.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-q8ZosW2QxYN7w2wKtId/d7ySLWfnb9kA/mfEvRrqvJ5g5W61Gcztwag95+obQvA8qgz3Bz9X+LnnIcB1vK5/sA=="
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main-img" onclick="window.location.href='main.html'">
+      <section class="main-text">
+        <h1 id="move">Strona dla graczy metin2</h1>
+      </section>
+    </div>
+    <div id="navigation">
+      <div class="nav" onclick="window.location.href='timers.html'">
+        <p>Timer</p>
+      </div>
+      <div class="nav" onclick="window.location.href='okey.html'">
+        <p>Karty</p>
+      </div>
+      <div class="nav" onclick="window.location.href='events.html'">
+        <p>Wydarzenia</p>
+      </div>
+      <div class="nav" onclick="window.location.href='drop.html'">
+        <p>Mapy</p>
+      </div>
+    </div>
+    <div id="back-img">
+      <div class="slider">
+        <img src="images/mapa1.png" class="slide active" />
+        <img src="images/mapa2.png" class="slide" />
+        <img src="images/mapa3.png" class="slide" />
+        <img src="images/mapa4.png" class="slide" />
+        <img src="images/mapa5.png" class="slide" />
+        <img src="images/mapa6.png" class="slide" />
+        <img src="images/mapa7.png" class="slide" />
+        <div class="slider-btn prev" onclick="zmianaSlajdu(-1)"></div>
+        <div class="slider-btn next" onclick="zmianaSlajdu(1)"></div>
+      </div>
+      <script>
+        let slajdy = document.querySelectorAll(".slide");
+        let aktualnySlajd = 0;
+
+        function zmianaSlajdu(n) {
+          slajdy[aktualnySlajd].classList.remove("active");
+          aktualnySlajd = (aktualnySlajd + n + slajdy.length) % slajdy.length;
+          slajdy[aktualnySlajd].classList.add("active");
+        }
+      </script>
+    </div>
+  </body>
+  <section class="copyright">
+    <p>Praca inżynierska</p>
+    <p>Jakub Gasidło</p>
+  </section>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Strona internetowa dla gracza Metin2</title>
+    <link rel="stylesheet" type="text/css" href="okey.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main-img" onclick="window.location.href='main.html'">
+      <section class="main-text">
+        <h1 id="move">Strona dla graczy metin2</h1>
+      </section>
+    </div>
+    <div id="navigation">
+      <div class="nav" onclick="window.location.href='timers.html'">
+        <p>Timer</p>
+      </div>
+      <div class="nav" onclick="window.location.href='okey.html'">
+        <p>Karty</p>
+      </div>
+      <div class="nav" onclick="window.location.href='events.html'">
+        <p>Wydarzenia</p>
+      </div>
+      <div class="nav" onclick="window.location.href='drop.html'">
+        <p>Mapy</p>
+      </div>
+    </div>
+    <div id="back-img">
+      <div id="images">
+        <div class="row">
+          <img src="images/y1.png" />
+          <img src="images/y2.png" />
+          <img src="images/y3.png" />
+          <img src="images/y4.png" />
+          <img src="images/y5.png" />
+          <img src="images/y6.png" />
+          <img src="images/y7.png" />
+          <img src="images/y8.png" />
+        </div>
+        <div class="row">
+          <img src="images/b1.png" />
+          <img src="images/b2.png" />
+          <img src="images/b3.png" />
+          <img src="images/b4.png" />
+          <img src="images/b5.png" />
+          <img src="images/b6.png" />
+          <img src="images/b7.png" />
+          <img src="images/b8.png" />
+        </div>
+        <div class="row">
+          <img src="images/r1.png" />
+          <img src="images/r2.png" />
+          <img src="images/r3.png" />
+          <img src="images/r4.png" />
+          <img src="images/r5.png" />
+          <img src="images/r6.png" />
+          <img src="images/r7.png" />
+          <img src="images/r8.png" />
+        </div>
+      </div>
+      <button id="reset">Reset</button>
+      <script>
+        const kartyOkey = document
+          .getElementById("images")
+          .getElementsByTagName("img");
+        const obrazekLiczba = [];
+
+        for (let i = 0; i < kartyOkey.length; i++) {
+          obrazekLiczba.push(kartyOkey[i].src);
+          kartyOkey[i].addEventListener("click", function () {
+            if (this.src.indexOf("reverse.png") === -1) {
+              this.src = "images/reverse.png";
+            } else {
+              this.src = obrazekLiczba[i];
+            }
+          });
+        }
+        document.getElementById("reset").addEventListener("click", function () {
+          for (let i = 0; i < kartyOkey.length; i++) {
+            kartyOkey[i].src = obrazekLiczba[i];
+          }
+        });
+      </script>
+    </div>
+  </body>
+  <section class="copyright">
+    <p>Praca inżynierska</p>
+    <p>Jakub Gasidło</p>
+  </section>
+</html>
